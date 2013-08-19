@@ -39,7 +39,7 @@ class SimpleFrontendPortlets extends System
 	/**
 	 * Checks if the portlet (marked module) should be displayed for the logged member
 	 */
-	public function checkPortletPublication($objModule, $strBuffer)
+	public function checkPortletPublicationForModul($objModule, $strBuffer)
 	{
 		if ($objModule->isSimpleFrontendPortlet && FE_USER_LOGGED_IN)
 		{
@@ -47,6 +47,27 @@ class SimpleFrontendPortlets extends System
 			if ($this->User->visibleSimpleFrontendPortlets == null || !in_array($objModule->id, $this->User->visibleSimpleFrontendPortlets))
 			{
 				return '';
+			}
+		}
+		return $strBuffer;
+	}
+	
+	/**
+	 * Checks if the portlet (marked module) should be displayed for the logged member
+	 */
+	public function checkPortletPublicationForContentElement($objContentElement, $strBuffer)
+	{
+		if ($objContentElement->type == 'module')
+		{
+			$this->import('Database');
+			
+			$objModule = $this->Database->prepare('SELECT * FROM tl_module WHERE id = ?')
+						   ->limit(1)
+						   ->execute($objContentElement->module);
+			
+			if ($objModule->numRows == 1)
+			{
+				$strBuffer = $this->checkPortletPublicationForModul($objModule, $strBuffer);
 			}
 		}
 		return $strBuffer;

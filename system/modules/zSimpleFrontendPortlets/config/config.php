@@ -30,6 +30,7 @@
 /**
  * Adding hook for checking if a module should be displayed
  */
-$GLOBALS['TL_HOOKS']['getFrontendModule'][] = array('SimpleFrontendPortlets', 'checkPortletPublication');
+$GLOBALS['TL_HOOKS']['getFrontendModule'][] = array('SimpleFrontendPortlets', 'checkPortletPublicationForModul');
+$GLOBALS['TL_HOOKS']['getContentElement'][] = array('SimpleFrontendPortlets', 'checkPortletPublicationForContentElement');
 
 ?>
