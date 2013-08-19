@@ -68,7 +68,7 @@ class tl_member_SimpleFrontendPortlets extends System
 		$arrPortlets = array();
 		while ($objPortlets->next())
 		{
-			$arrPortlets[$objPortlets->id] = $objPortlets->name;
+			$arrPortlets[$objPortlets->id] = $objPortlets->simpleFrontendPortletName . " (" . $objPortlets->simpleFrontendPortletDescription . ")";
 		}
 		return $arrPortlets;
 	}
@@ -79,7 +79,7 @@ class tl_member_SimpleFrontendPortlets extends System
 	private function getPortletsForMode ()
 	{
 		$this->import('Database');
-		$query = "SELECT id, name FROM tl_module WHERE isSimpleFrontendPortlet = ?";
+		$query = "SELECT * FROM tl_module WHERE isSimpleFrontendPortlet = ?";
 		$params = array('1');
 		
 		if (TL_MODE == 'FE')

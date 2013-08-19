@@ -33,10 +33,13 @@
 foreach ($GLOBALS['TL_DCA']['tl_module']['palettes'] as $name=>$palette) {
 	if ($name == '__selector__')
 	{
+		$GLOBALS['TL_DCA']['tl_module']['palettes'][$name][] = 'isSimpleFrontendPortlet';
 		continue;
 	}
 	$GLOBALS['TL_DCA']['tl_module']['palettes'][$name] = str_replace("{expert_legend:hide}", "{simpleFrontendPortlet_legend},isSimpleFrontendPortlet;{expert_legend:hide}", $palette);
 }
+
+$GLOBALS['TL_DCA']['tl_module']['subpalettes']['isSimpleFrontendPortlet'] = 'simpleFrontendPortletName,simpleFrontendPortletDescription';
 
 /**
  * Add fields to tl_module
@@ -45,7 +48,31 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['isSimpleFrontendPortlet'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['isSimpleFrontendPortlet'],
 	'exclude'                 => true,
-	'inputType'               => 'checkbox'
+	'filter'                  => true,
+	'inputType'               => 'checkbox',
+	'eval'                    => array('submitOnChange' => true)
+);
+
+/**
+ * Add fields to tl_module
+ */
+$GLOBALS['TL_DCA']['tl_module']['fields']['simpleFrontendPortletName'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['simpleFrontendPortletName'],
+	'exclude'                 => true,
+	'inputType'               => 'text',
+	'eval'                    => array('mandatory' => true, 'tl_class' => 'w50', 'maxlength' => 128)
+);
+
+/**
+ * Add fields to tl_module
+ */
+$GLOBALS['TL_DCA']['tl_module']['fields']['simpleFrontendPortletDescription'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['simpleFrontendPortletDescription'],
+	'exclude'                 => true,
+	'inputType'               => 'text',
+	'eval'                    => array('mandatory' => true, 'tl_class' => 'w50', 'maxlength' => 512)
 );
 
 ?>

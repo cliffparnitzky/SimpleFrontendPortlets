@@ -30,7 +30,9 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_module']['isSimpleFrontendPortlet'] = array('Als Einfaches Frontend Portlet verwenden', 'Legen sie fest, ob dieses Modul als einfaches Frontend Portlet verwendet werden soll.');
+$GLOBALS['TL_LANG']['tl_module']['isSimpleFrontendPortlet']          = array('Als Einfaches Frontend Portlet verwenden', 'Legen sie fest, ob dieses Modul als einfaches Frontend Portlet verwendet werden soll.');
+$GLOBALS['TL_LANG']['tl_module']['simpleFrontendPortletName']        = array('Portlet Name', 'Geben Sie einen eigenen Anzeigenamen für das Portlet ein.');
+$GLOBALS['TL_LANG']['tl_module']['simpleFrontendPortletDescription'] = array('Portlet Beschreibung', 'Geben Sie eine Beschreibung für das Portlet ein.');
 
 /**
  * Legends

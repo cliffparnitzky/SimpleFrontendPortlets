@@ -36,3 +36,12 @@ Usage
 - mark preferred modules as simple frontend portlets (see module config)
 - add module 'Personal Data' to the frontend (will offer the member to change visible portlets)
 - use template 'member_grouped_incl_preferences' for module 'Personal Data' (add preferences group)
+
+Screenshots
+-----------
+
+![Screenshot: Frontend configuration of personal data](https://raw.github.com/cliffparnitzky/SimpleFrontendPortlets/master/screenshot_frontend.jpg)
+
+![Screenshot: Backend configuration of modul](https://raw.github.com/cliffparnitzky/SimpleFrontendPortlets/master/screenshot_backend_modul.jpg)
+
+![Screenshot: Backend configuration of member details](https://raw.github.com/cliffparnitzky/SimpleFrontendPortlets/master/screenshot_backend_member.jpg)

@@ -12,7 +12,9 @@
 -- 
 
 CREATE TABLE `tl_module` (
-  `isSimpleFrontendPortlet` char(1) NOT NULL default ''
+  `isSimpleFrontendPortlet` char(1) NOT NULL default '',
+  `simpleFrontendPortletName` varchar(128) NOT NULL default '',
+  `simpleFrontendPortletDescription` varchar(512) NOT NULL default ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

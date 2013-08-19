@@ -44,7 +44,7 @@ class SimpleFrontendPortlets extends System
 		if ($objModule->isSimpleFrontendPortlet && FE_USER_LOGGED_IN)
 		{
 			$this->import('FrontendUser', 'User');
-			if (!in_array($objModule->id, $this->User->visibleSimpleFrontendPortlets))
+			if ($this->User->visibleSimpleFrontendPortlets == null || !in_array($objModule->id, $this->User->visibleSimpleFrontendPortlets))
 			{
 				return '';
 			}
