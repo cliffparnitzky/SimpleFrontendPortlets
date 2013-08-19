@@ -3,6 +3,8 @@ Contao Extension: SimpleFrontendPortlets
 
 Provides the function to use modules in the frontend as protlets. Logged members can decide which portlets are visible.
 
+At the moment there are only modules supported, which are definied in the layout. Modules in articles will be ignored.
+
 
 Installation
 ------------
